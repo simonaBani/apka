@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import Masonry from 'react-masonry-component';
+import { Link } from 'react-router-dom';
 
 import Todo from "../components/Todo";
+import FakeAdd from '../components/FakeAdd'
+
 
 class TodoList extends Component {
   render() {
@@ -9,6 +12,13 @@ class TodoList extends Component {
     
     return (
       <Masonry className="todos">
+
+        <Link to="/add">
+          <div className="card">
+            <FakeAdd />
+          </div>
+       </Link>
+
         {todos.map((todoData) => {
           const handleFinishTodo = () => {
             todoData.finished = true;
@@ -25,7 +35,9 @@ class TodoList extends Component {
               key={todoData.id}
               onFinish={handleFinishTodo}
               onRemove={handleRemoveTodo}
+            
             />
+            
           );
         })}
       </Masonry>
