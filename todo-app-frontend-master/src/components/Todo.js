@@ -4,6 +4,7 @@ import axios from "../axios";
 
 import TodoButtons from "./TodoButtons";
 import TodoBadge from "./TodoBadge";
+import TimeAgo2 from '../components/TimeAgo2';
 
 
 class Todo extends Component {
@@ -32,6 +33,7 @@ class Todo extends Component {
     const { createdAt, title, finished } = this.props.todo;
     let classes = "card";
     if (finished) classes += " myBorder";
+  
     if (!finished) classes += " myBorder2";
 
     return (
@@ -39,13 +41,13 @@ class Todo extends Component {
       <div className="todo mb-2">
         <div className={classes}>
           <div className="card-body">
-            <h5 className="card-title">{title}</h5>
-             <TodoBadge
+            <h5 className="card-title">{title}  <TodoBadge
               todo={this.props.todo}
              
-              />
+              /></h5>
+           
             <h6 className="card-subtitle text-muted mb-2">
-              {createdAt}
+              Created at {createdAt}
             </h6>
             {this.renderText()}
             <TodoButtons
@@ -54,7 +56,11 @@ class Todo extends Component {
               onRemove={this.handleRemove}
               
               />
-          </div>
+             <div className="timeAgoMade">
+              <TimeAgo2
+               todo={this.props.todo} /> 
+             </div>
+            </div>
         </div>
       </div>
     </div>
