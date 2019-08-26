@@ -28,6 +28,8 @@ public class DbToDoItem {
 
 	private String deadline;
 
+	private String importance;
+
 	public String getIdentifier() {
 		return identifier;
 	}
@@ -92,6 +94,14 @@ public class DbToDoItem {
 
 	public String getDeadline() {
 		return deadline;
+	}
+
+	public String getImportance() {
+		return importance;
+	}
+	
+	public void setImportance(String importance) {
+		this.importance = importance;
 	}
 
 	

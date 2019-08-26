@@ -9,6 +9,7 @@ class AddTodo extends Component {
     title: "",
     text: "",
     deadline: new Date(),
+    importance: "urgent",
   };
 
   handleSubmit = async event => {
@@ -18,6 +19,7 @@ class AddTodo extends Component {
       title: '',
       text: '',
       deadline: new Date(),
+      importance: '',
     });
     this.props.history.push("/");
   };
@@ -36,8 +38,9 @@ class AddTodo extends Component {
   }
 
   
-    render() {
-    const { title, text, deadline } = this.state;
+  
+  render() {
+    const { title, text, deadline, importance } = this.state;
 
       
     return (
@@ -67,22 +70,27 @@ class AddTodo extends Component {
                  
                 />
         </div>
-        
-        
-        <button
+
+        <select 
+         name="importance"
+         value={importance}
+         onChange={this.handleChange}
+         >
+          <option value="urgent" >Urgent</option>
+          <option value="high"  >High</option>
+          <option value="medium" >Medium</option>
+          <option value="low"  >Low</option>
+        </select>
+
+         <button
           type="submit"
           className="btn btn-outline-success"
           disabled={!title}
         >
           Save
         </button>
-         
       </form>
-      
-      
-        
-      
-    
+
     );
   }
 }

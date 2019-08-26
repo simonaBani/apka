@@ -69,3 +69,19 @@ min-height: 240px;
   right: 120px;
 }
 
+.impo {
+  min-width: 30px;
+  min-height: 15px;
+  padding: 0.2rem;
+  margin: 0.2rem;
+}
+
+.urgentik {
+  background-color: red;
+  
+}
+
+.hightik {
+  color: blue;
+}
+

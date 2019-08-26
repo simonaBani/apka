@@ -20,6 +20,7 @@ public class ToDoItemConverter {
 		target.setFinishedAt(source.getFinishedAt());
 		target.setStartedAt(source.getStartedAt());
 		target.setDeadline(source.getDeadline());
+		target.setImportance(source.getImportance());
 		
 		target.setIdentifier(identifier);
 		
@@ -39,6 +40,7 @@ public class ToDoItemConverter {
 		target.setFinishedAt(source.getFinishedAt());
 		target.setStartedAt(source.getStartedAt());
 		target.setDeadline(source.getDeadline());
+		target.setImportance(source.getImportance());
 		
 		target.setId(source.getIdentifier());
 		

@@ -35,7 +35,8 @@ class Todo extends Component {
   
 
   render() {
-    const { createdAt, title, finished, finishedAt, startedAt, deadline } = this.props.todo;
+    const { createdAt, title, finished, finishedAt, startedAt, deadline, importance } = this.props.todo;
+    
     let classes = "card";
     let finishedAtTime; 
     
@@ -53,10 +54,11 @@ class Todo extends Component {
       )
     } 
 
+   
+
+
+
     
-
-  
-
     return (
       <div className="wrapper">
       <div className="todo mb-2">
@@ -84,21 +86,28 @@ class Todo extends Component {
               onRemove={this.handleRemove}
                                    
               />
-             <div className="timeAgoMade">
-              <TimeAgo2
-               todo={this.props.todo} /> 
-             </div>
+            
              <div className="starter">
                Started {moment(startedAt).fromNow()} 
              </div> 
           </div>
-
+          
           <div className="finishik">
             {finishedAtTime}
           </div>
-         
-        </div>
+          
+          <div className="card=footer text-muted">
+              {importance === "urgent" ? <div className="urgentik" /> : null}
+              {importance === "high" ? <div className="highik" /> : null}
+              {importance === "medium" ? <div className="mediumik" /> : null}
+              {importance === "low" ? <div className="lowik" /> : null}{" "}
+              {importance}
+
+          </div>
+           
+          
       </div>
+    </div>
     </div>
       
     
