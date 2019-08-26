@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
+// import Moment from 'react-moment';
+import moment from 'moment';
+import { GoNoNewline } from 'react-icons/go';
 
 
 class TodoButtons extends Component {
   render () {
-    const { finished } = this.props.todo;
+    const { finished, finishedAt, startedAt } = this.props.todo;
     let finishButton;
+    let finishedAtTime;
     if (!finished) {
       finishButton = (
         <button type="button" className="btn btn-success float-right" onClick={this.props.onFinish}>
@@ -13,6 +17,7 @@ class TodoButtons extends Component {
       ) 
     }
 
+    
     return (
       <>
         <button type="button" className="btn btn-info" onClick={this.props.onRemove}>
@@ -22,6 +27,7 @@ class TodoButtons extends Component {
             <span aria-hidden="true">&times;</span>
           </button>
         {finishButton}
+        {finishedAtTime}
       </>
     )
   }
@@ -29,4 +35,4 @@ class TodoButtons extends Component {
 }
 
 
-export default TodoButtons;
+export default TodoButtons

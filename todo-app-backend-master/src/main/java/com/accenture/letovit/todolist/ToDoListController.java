@@ -54,8 +54,11 @@ public class ToDoListController {
 		
 		// we will use our own current date in todo, not the one from json request
 		LocalDateTime now = LocalDateTime.now();
-		String prettyDateTime = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM).format(now);
+		String prettyDateTime = DateTimeFormatter.ISO_DATE_TIME.format(now);
 		request.setCreatedAt(prettyDateTime);
+		
+		request.setStartedAt(prettyDateTime);
+//		request.setDeadline(prettyDateTime);
 		
 		// generate unique ID for each todo item
 		String id = UUID.randomUUID().toString();
@@ -110,6 +113,8 @@ public class ToDoListController {
 		// set single todo item to finished and save the change to DB
 		DbToDoItem dbToDoItem = repository.findById(identifier).get();
 		dbToDoItem.setFinished(requestBody.isFinished());
+		dbToDoItem.setFinishedAt(requestBody.setDate());
+		dbToDoItem.setStartedAt(requestBody.startedAt());
 		repository.save(dbToDoItem);
 	}
 }

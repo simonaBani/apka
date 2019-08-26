@@ -1,10 +1,14 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
+import "react-datepicker/dist/react-datepicker.css";
+
+import DatePicker from "react-datepicker";
 
 class AddTodo extends Component {
   state = {
     title: "",
-    text: ""
+    text: "",
+    deadline: new Date(),
   };
 
   handleSubmit = async event => {
@@ -12,7 +16,8 @@ class AddTodo extends Component {
     await this.props.onAdd(this.state);
     this.setState({
       title: '',
-      text: ''
+      text: '',
+      deadline: new Date(),
     });
     this.props.history.push("/");
   };
@@ -24,9 +29,17 @@ class AddTodo extends Component {
     });
   };
 
-  render() {
-    const { title, text } = this.state;
+  handleDate = (date) => {
+    this.setState({
+      deadline: date
+    });
+  }
 
+  
+    render() {
+    const { title, text, deadline } = this.state;
+
+      
     return (
       <form onSubmit={this.handleSubmit}>
         <input
@@ -45,7 +58,17 @@ class AddTodo extends Component {
           className="form-control mb-2"
           placeholder="Text"
         />
-
+        
+        <div className="datumovnicek">
+        
+        <DatePicker
+                selected={deadline}
+                onChange={this.handleDate}
+                 
+                />
+        </div>
+        
+        
         <button
           type="submit"
           className="btn btn-outline-success"
@@ -53,7 +76,13 @@ class AddTodo extends Component {
         >
           Save
         </button>
+         
       </form>
+      
+      
+        
+      
+    
     );
   }
 }

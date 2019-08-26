@@ -17,6 +17,9 @@ public class ToDoItemConverter {
 		target.setFinished(source.isFinished());
 		target.setText(source.getText());
 		target.setTitle(source.getTitle());
+		target.setFinishedAt(source.getFinishedAt());
+		target.setStartedAt(source.getStartedAt());
+		target.setDeadline(source.getDeadline());
 		
 		target.setIdentifier(identifier);
 		
@@ -33,6 +36,9 @@ public class ToDoItemConverter {
 		target.setFinished(source.isFinished());
 		target.setText(source.getText());
 		target.setTitle(source.getTitle());
+		target.setFinishedAt(source.getFinishedAt());
+		target.setStartedAt(source.getStartedAt());
+		target.setDeadline(source.getDeadline());
 		
 		target.setId(source.getIdentifier());
 		

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import Todo from "../components/Todo";
 import FakeAdd from '../components/FakeAdd'
+import moment from "moment";
 
 
 class TodoList extends Component {
@@ -13,15 +14,20 @@ class TodoList extends Component {
     return (
       <Masonry className="todos">
 
-        <Link to="/add">
-          <div className="card">
+        <div className="todo">
+          
+            
+         
             <FakeAdd />
-          </div>
-       </Link>
+        
+        
+       </div>
 
         {todos.map((todoData) => {
           const handleFinishTodo = () => {
             todoData.finished = true;
+            Todo.finishedAt = moment().format();
+            Todo.startedAt = moment().format();
             this.props.onEdit(todoData);
           };
 
@@ -35,6 +41,7 @@ class TodoList extends Component {
               key={todoData.id}
               onFinish={handleFinishTodo}
               onRemove={handleRemoveTodo}
+              
             
             />
             

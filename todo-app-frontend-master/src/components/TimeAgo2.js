@@ -1,6 +1,5 @@
 import React from 'react';
 import Moment from 'react-moment'; 
-import moment from 'moment' ;
 
 class TimeAgo2 extends React.Component {
 
@@ -11,7 +10,7 @@ class TimeAgo2 extends React.Component {
 
             newTimeik = (    
                 <p>
-                    Started ago - 
+                    Started ago :  
         
                     {/* {moment(createdAt).fromNow()} */}
 

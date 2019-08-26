@@ -1,5 +1,6 @@
 import React from 'react';
 import { GoPlus } from 'react-icons/go';
+import { Link } from 'react-router-dom';
 
 
 class FakeAdd extends React.Component {
@@ -9,15 +10,15 @@ class FakeAdd extends React.Component {
 
 
     return (
-        <>
-       <div className="card">
-            <button type="button" className="card goButton" onClick={this.props.onFakeAddButton}>
+   
+       <div className="card" onClick={this.props.onFakeAddButton}>
+         <Link className="linkPlus" to="/add">
                  <GoPlus size='70' /> 
                  <p id="txt">Add New Task</p>
-            </button>
+           </Link>
         </div>
         
-      </>
+  
 
 
     

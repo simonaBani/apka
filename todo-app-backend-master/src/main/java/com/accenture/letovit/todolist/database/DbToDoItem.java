@@ -22,6 +22,12 @@ public class DbToDoItem {
 
 	private String createdAt;
 
+	private String finishedAt;
+
+	private String startedAt;
+
+	private String deadline;
+
 	public String getIdentifier() {
 		return identifier;
 	}
@@ -61,5 +67,35 @@ public class DbToDoItem {
 	public void setCreatedAt(String createdAt) {
 		this.createdAt = createdAt;
 	}
+
+	public void setFinishedAt(String finishedAt) {
+		this.finishedAt = finishedAt;
+		
+	}
+
+	public String getFinishedAt() {
+		return finishedAt;
+	}
+
+	public void setStartedAt(String startedAt) {
+		this.startedAt = startedAt;
+		
+	}
+	
+	public String getStartedAt() {
+		return startedAt;
+	}
+	
+	public void setDeadline(String deadline) {
+		this.deadline = deadline;
+	}
+
+	public String getDeadline() {
+		return deadline;
+	}
+
+	
+	
+	
 
 }

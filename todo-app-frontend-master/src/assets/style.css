@@ -8,8 +8,7 @@
   margin-left: 10px;
   margin-right: 10px;
   margin: 2rem;
-
-}
+ }
 
 .myBorder {
   border-color: lightgreen;
@@ -32,10 +31,10 @@
 }
 
 .card {
-  width: 320px;
-  height: 200px;
- 
+min-width: 320px;
+min-height: 240px;  
 }
+
 
 .close {
   position: absolute;
@@ -46,9 +45,27 @@
 
 .timeAgoMade {
   margin: 1rem;
+  display: none;
 }
 
 .finishTime {
   background-color: pink;
+}
+
+.deadliner {
+  color: red;
+  margin: 0.7rem;
+  font-style: italic;
+}
+
+.deadlinePath {
+  border-color: red;
+}
+
+.linkPlus {
+  color: grey;
+  position: absolute;
+  top: 70px;
+  right: 120px;
 }
 
