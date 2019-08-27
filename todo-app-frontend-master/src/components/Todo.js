@@ -96,15 +96,14 @@ class Todo extends Component {
             {finishedAtTime}
           </div>
           
-          <div className="card=footer text-muted">
-              {importance === "urgent" ? <div className="urgentik" /> : null}
+          <div className="impor">
+              {importance === "urgent" ? <div className="urgentik" /> : null} 
               {importance === "high" ? <div className="highik" /> : null}
               {importance === "medium" ? <div className="mediumik" /> : null}
               {importance === "low" ? <div className="lowik" /> : null}{" "}
               {importance}
-
           </div>
-           
+
           
       </div>
     </div>

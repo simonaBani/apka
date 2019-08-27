@@ -78,10 +78,44 @@ min-height: 240px;
 
 .urgentik {
   background-color: red;
-  
+  border-radius: 50%;
+  max-height: 0.5rem;
+  max-width: 0.5rem;
+  margin-left: 2rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+
 }
 
 .hightik {
-  color: blue;
+  background-color: blue;
+  border-radius: 50%;
+  max-height: 0.5rem;
+  max-width: 0.5rem;
+  margin-left: 2rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
 }
+
+.mediumik {
+  background-color: yellow;
+  border-radius: 50%;
+  max-height: 0.5rem;
+  max-width: 0.5rem;
+  margin-left: 2rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.lowik {
+  background-color: green;
+  border-radius: 50%;
+  max-height: 0.5rem;
+  max-width: 0.5rem;
+  margin-left: 2rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+
 
